@@ -7,6 +7,46 @@
 <body>
 <script>
     // TODO: Your JavaScript implementation for array extraction goes here.
+    "use strict"; 
+    const exampleArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    function arrayExtract(array, start, length) {
+
+    let newArray = [];
+    if (length > array.length)
+        return [];
+    if (Math.abs(start) > array.length)
+        return [];
+    if (start < 0){
+        let newStart = array.length + start 
+    if (newStart + length - 1 > array.length)
+        return [];
+        for (let i = 0; i < length; i++)
+        {
+            newArray[i] = array[newStart + i ];
+        }
+    }else{
+        for (let i = 0; i < length; i++)
+        {
+            newArray[i] = array[start + i ];
+        }
+    }
+   
+    return newArray;
+
+}
+console.log(arrayExtract(exampleArray, 1, 4));
+console.log(arrayExtract(exampleArray, 1, 10));
+console.log(arrayExtract(exampleArray, 12, 2));
+console.log(arrayExtract(exampleArray, -5, 3));
+console.log(arrayExtract(exampleArray, -11, 2));
+console.log(arrayExtract(exampleArray, -13, 2));
+console.log(arrayExtract());
+console.log(arrayExtract(exampleArray));
+console.log(arrayExtract(exampleArray, 0));
+  
+	
+
+
 </script>
 </body>
 </html>
